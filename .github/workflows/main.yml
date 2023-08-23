@@ -28,9 +28,9 @@ jobs:
       - name: 📂 FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
-          server: ftp.sehatbooking.com
-          username: admin@admin.sehatbooking.com
-          password: vYI[Z9H5g?+=
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
           protocol: ftps
           security: strict
