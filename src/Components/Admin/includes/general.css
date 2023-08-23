@@ -1,0 +1,24 @@
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff9e;
+  z-index: 1111111111111111;
+}
+.loader.in {
+  display: flex;
+}
+.loader .main-spin {
+  width: 70px;
+  height: 70px;
+
+  border-color: #25addc;
+  border-right-color: transparent;
+}
