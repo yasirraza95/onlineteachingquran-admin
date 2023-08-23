@@ -155,8 +155,9 @@ a.admin-forgot.btn:hover{
   
   .login-admin-1 .black-box input[type="submit"]:hover,
   .login-admin-1 .black-box ul li a:hover {
-    background: #D0F2FF;
+    background: #fff;
     color: #000;
+    font-weight: 500;
     transition: all 0.4s;
   }
   

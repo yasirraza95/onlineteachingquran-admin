@@ -54,7 +54,7 @@ a {
 }
 
 .top-header .navbar .top-navbar-right .nav-link:hover {
-  background: #ea062b;
+  background: #157815;
   transition: all 0.4s;
 }
 
@@ -356,7 +356,7 @@ a {
 
 /* Handle on hover */
 .error-msg::-webkit-scrollbar-thumb:hover {
-  background: #ea062b;
+  background: #157815;
 }
 
 .forgot-bot {
@@ -390,7 +390,7 @@ a {
 
 /* Handle */
 .sidebar-wrapper::-webkit-scrollbar-thumb {
-  background: #ea062b;
+  background: #157815;
 }
 
 /* Handle on hover */
@@ -429,7 +429,7 @@ a {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid #ea062b;
+  border: 2px solid #157815;
   cursor: pointer
 }
 
@@ -659,7 +659,7 @@ input.main-head {
   font-size: 27px;
   font-family: "Oswald";
   border: 0;
-  border-bottom: 1px solid #ea062b;
+  border-bottom: 1px solid #157815;
   margin-bottom: 10px;
   width: 100%;
   font-weight: 300;
@@ -668,7 +668,7 @@ input.main-head {
 input.main-head:focus {
   border: 0;
   outline: none;
-  border-bottom: 1px solid #ea062b;
+  border-bottom: 1px solid #157815;
 }
 
 .form-control.list-input {
@@ -720,7 +720,7 @@ input.main-head:focus {
 }
 
 .left-rig-arrowtable .move {
-  background: #ea062b;
+  background: #157815;
   border: 0;
   color: white;
   font-size: 18px;
@@ -737,7 +737,7 @@ input.main-head:focus {
 
 /* Handle on hover */
 .table-responsive::-webkit-scrollbar-thumb:hover {
-  background: #ea062b;
+  background: #157815;
 }
 
 .drop-zone {
@@ -753,8 +753,8 @@ input.main-head:focus {
   font-size: 20px;
   cursor: pointer;
   color: #25addc;
-  border: 4px dashed #ea062b;
-  background: #ea062b12;
+  border: 4px dashed #157815;
+  background: #15781512;
   border-radius: 10px;
 }
 
@@ -956,13 +956,13 @@ input.main-head:focus {
   border-radius: 50%;
   bottom: 20px;
   right: 12px;
-  background-color: #ea062b;
+  background-color: #157815;
   z-index: 5;
 }
 
 .back-to-top:hover {
   color: #fff;
-  background-color: #ea062b;
+  background-color: #157815;
   transition: all 0.5s;
 }
 
@@ -986,8 +986,8 @@ input.main-head:focus {
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #ea062b;
-  border-color: #ea062b;
+  background-color: #157815;
+  border-color: #157815;
 }
 
 .pagination .page-link {
@@ -1421,8 +1421,8 @@ input.main-head:focus {
 }
 
 .back-blue {
-  background: #ea062b;
-  border-color: #ea062b;
+  background: #157815;
+  border-color: #157815;
   color: #fff;
 }
 
@@ -1435,7 +1435,7 @@ header.top-header .welcome-txt {
 }
 
 header.top-header .red-welcome {
-  background-color: #ea062b;
+  background-color: #157815;
   height: 69px;
   display: flex;
   align-items: center;
@@ -1478,7 +1478,7 @@ header.top-header .rig-red {
   font-family: "Oswald", sans-serif;
   width: 100%;
   text-transform: uppercase;
-  color: #ea062b;
+  color: #157815;
   font-size: 40px;
   font-weight: 700;
   margin: 0;
@@ -1539,8 +1539,8 @@ header.top-header .rig-red {
 .btn-primary:disabled,
 .btn-primary.disabled {
   color: #fff;
-  background-color: #ea062b;
-  border-color: #ea062b;
+  background-color: #157815;
+  border-color: #157815;
   cursor: not-allowed;
   pointer-events: all;
 }
@@ -1584,21 +1584,21 @@ header.top-header .rig-red {
 .rzl-tabl .btn-outline-secondary.sebmit-dat:hover,
 .rzl-tabl .btn-outline-secondary.sebmit-dat:focus {
   color: #ffffff;
-  border-color: #ea062b;
-  background-color: #ea062b;
+  border-color: #157815;
+  background-color: #157815;
 }
 
 select.form-select:focus,
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #ea062b;
+  border-color: #157815;
   outline: 0;
   box-shadow: none;
 }
 
 h2.ewslet_temp {
-  color: #ea062b;
+  color: #157815;
   font-size: 25px;
   font-family: "Oswald";
   margin-bottom: 11px;
@@ -1638,7 +1638,7 @@ h2.ewslet_temp {
 .reacter-datepicker .react-datepicker__month-text--keyboard-selected,
 .reacter-datepicker .react-datepicker__quarter-text--keyboard-selected,
 .reacter-datepicker .react-datepicker__year-text--keyboard-selected {
-  background-color: #ea062b9c;
+  background-color: #1578159c;
 }
 
 .reacter-datepicker .react-datepicker__day:hover,
@@ -1660,7 +1660,7 @@ h2.ewslet_temp {
 .reacter-datepicker .react-datepicker__year-text--selected:hover,
 .reacter-datepicker .react-datepicker__year-text--in-selecting-range:hover,
 .reacter-datepicker .react-datepicker__year-text--in-range:hover {
-  background-color: #ea062b;
+  background-color: #157815;
 }
 
 .reacter-datepicker .react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range,
@@ -1683,7 +1683,7 @@ h2.ewslet_temp {
 }
 
 .reacter-datepicker .react-datepicker__header {
-  background-color: #ea062b;
+  background-color: #157815;
 }
 
 .reacter-datepicker .react-datepicker__current-month,
@@ -1846,7 +1846,7 @@ p.help.is-danger {
 
 .form-floating>.form-control:focus {
   box-shadow: none;
-  border-color: #ea062b;
+  border-color: #157815;
   outline: none;
 }
 
@@ -1978,7 +1978,7 @@ footer {
 }
 
 .initia {
-  color: #ea062b;
+  color: #157815;
 }
 
 .rob-rollmann li:after {
@@ -1987,7 +1987,7 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid #ea062b;
+  border: 1px solid #157815;
   left: 0;
   top: 4px;
 }
@@ -2011,8 +2011,8 @@ footer {
 }
 
 .back-orange {
-  background: #ea062b;
-  border-color: #ea062b;
+  background: #157815;
+  border-color: #157815;
   color: white;
 }
 
@@ -2059,8 +2059,8 @@ footer {
 }
 
 .old-new .form-check-input:checked {
-  background-color: #ea062b;
-  border-color: #ea062b;
+  background-color: #157815;
+  border-color: #157815;
   box-shadow: none;
 }
 
@@ -2084,12 +2084,12 @@ input.w-100.cursor-pointer.is-danger {
 }
 
 .progress-bar {
-  background-color: #ea062b;
+  background-color: #157815;
 }
 
 .bi-book,
 .text-orange {
-  color: #ea062b;
+  color: #157815;
 }
 
 button.text-orange {
@@ -2414,7 +2414,7 @@ td.add-edit-delete-inline {
   }
 
   header.top-header .red-welcome {
-    background-color: #ea062b;
+    background-color: #157815;
     height: 50px;
     /* height: 32px; */
     display: flex;
@@ -2551,9 +2551,9 @@ button.btn.btn-primary.back-blue.dropdown-toggle.AcceptClaims {
 }
 
 button.btn.btn-outline-secondary.sebmit-dat {
-  background-color: #ea062b;
+  background-color: #157815;
   color: #fff;
-  border-color: #ea062b;
+  border-color: #157815;
 }
 
 button.btn.btn-outline-secondary.sebmit-dat:hover {
@@ -2563,9 +2563,9 @@ button.btn.btn-outline-secondary.sebmit-dat:hover {
 }
 
 button.btn.btn-outline-secondary {
-  background-color: #ea062b;
+  background-color: #157815;
   color: #fff;
-  border-color: #ea062b;
+  border-color: #157815;
 }
 
 button.btn.btn-outline-secondary:hover {
@@ -2946,8 +2946,8 @@ span.count-name3 {
   margin-top: 11px;
 } */
 /* button.btn.btn-danger{
-  background-color: #ea062b;
-  border: 1px solid #ea062b;
+  background-color: #157815;
+  border: 1px solid #157815;
 } */
 button.btn.btn-danger:hover{
   background-color: #00a9e0;

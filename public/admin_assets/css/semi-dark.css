@@ -28,7 +28,7 @@ html {
 }
 .bi-list::before {
   color: #fff;
-  background-color: #ea062b;
+  background-color: #157815;
   border-radius: 5px;
 }
 
@@ -38,7 +38,7 @@ html {
 .semi-dark .sidebar-wrapper .metismenu a:hover {
   color: #ffff;
   text-decoration: none;
-  background: #ea062b;
+  background: #157815;
   border-left: 4px solid  #D0F2FF;
 
 }

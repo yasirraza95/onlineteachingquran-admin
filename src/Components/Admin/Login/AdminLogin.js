@@ -105,7 +105,7 @@ export default function AdminLogin() {
                   <form action="" onSubmit={handleSubmit} noValidate>
                     <div className="row">
                     <div className="col-lg-12">
-                        <h4 className="prf-hed" style={{color: "#ea062b"}}>ADMIN LOGIN</h4>
+                        <h4 className="prf-hed" style={{color: "#157815"}}>ADMIN LOGIN</h4>
                       </div>
                       <hr className="underLine" />
                       <div className="col-12">
