@@ -139,37 +139,53 @@ export default function HeaderSidebar() {
             </Link>
           </li>
           <li>
-            <Link to="/blood-request">
+            <Link to="/sliders">
               <div className="parent-icon">
               <i class="bi bi-people-fill"></i>
               </div>
-              <div className="menu-title">Blood Request</div>
+              <div className="menu-title">Sliders</div>
             </Link>
           </li>
           <li>
-            <Link to="/blood-donor">
+            <Link to="/add-slider">
               <div className="parent-icon">
               <i class='fas fa-hand-holding-medical'></i>
               </div>
-              <div className="menu-title">Blood Donor</div>
+              <div className="menu-title">Add Slider</div>
             </Link>
           </li>
           <li>
-            <Link to="/volunteers-upload">
+            <Link to="/namaz-time">
               <div className="parent-icon">
               <i class='fas fa-hand-holding-medical'></i>
               </div>
-              <div className="menu-title">Upload Volunteer</div>
+              <div className="menu-title">Namaz Time</div>
             </Link>
           </li>
           <li>
-            <Link to="/volunteers">
+            <Link to="/site-info">
               <div className="parent-icon">
               <i class='fas fa-hand-holding-medical'></i>
               </div>
-              <div className="menu-title">Manage Volunteers</div>
+              <div className="menu-title">Site Info</div>
             </Link>
-          </li>        
+          </li>
+          <li>
+            <Link to="/services">
+              <div className="parent-icon">
+              <i class='fas fa-hand-holding-medical'></i>
+              </div>
+              <div className="menu-title">Services</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/add-service">
+              <div className="parent-icon">
+              <i class='fas fa-hand-holding-medical'></i>
+              </div>
+              <div className="menu-title">Add Service</div>
+            </Link>
+          </li>
         </ul>
       </aside>
       <div className={`loader ${loading ? "in" : ""}`}>

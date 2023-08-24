@@ -17,10 +17,13 @@ import Password from "./Components/Dashboard/Profile/Password";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import jwt_decode from "jwt-decode";
-import BloodRequest from "./Components/Dashboard/BloodRequest/BloodRequest";
-import BloodDonor from "./Components/Dashboard/BloodDonor/BloodDonor";
-import UserImgUpload from "./Components/Dashboard/UserImgUpload/UserImgUpload";
-import Volunteers from "./Components/Dashboard/UserImgUpload/Volunteers";
+import AddService from "./Components/Dashboard/UserImgUpload/AddService";
+import AddSlider from "./Components/Dashboard/UserImgUpload/AddSlider";
+import Namaz from "./Components/Dashboard/UserImgUpload/Namaz";
+import NamazId from "./Components/Dashboard/UserImgUpload/NamazId";
+import Services from "./Components/Dashboard/UserImgUpload/Services";
+import SiteInfo from "./Components/Dashboard/UserImgUpload/SiteInfo";
+import Sliders from "./Components/Dashboard/UserImgUpload/Sliders";
 
 function App() {
   const dispatch = useDispatch();
@@ -101,11 +104,16 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/password" element={<Password />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/volunteers-upload" element={<UserImgUpload />} />
-      <Route path="/volunteers" element={<Volunteers />} />
-      <Route path="/contant-us" element={<ContactUs />} />
-      <Route path="/blood-request" element={<BloodRequest />} />
-      <Route path="/blood-donor" element={<BloodDonor />} />
+      <Route path="/sliders" element={<Sliders />} />
+      <Route path="/add-slider" element={<AddSlider />} />
+      <Route path="/namaz-time" element={<Namaz />} />
+      <Route path="/namaz-time/:id" element={<NamazId />} />
+      <Route path="/site-info" element={<SiteInfo />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/add-service" element={<AddService />} />
+      {/* <Route path="/contant-us" element={<ContactUs />} /> */}
+      {/* <Route path="/blood-request" element={<BloodRequest />} /> */}
+      {/* <Route path="/blood-donor" element={<BloodDonor />} /> */}
       <Route path="/forgot_pass" element={<AdminForgotPass />} />
       <Route path="/admin/forgot_token" element={<CheckAdminForgetToken />} />
       <Route path="/admin/change_pass" element={<AdminChangePass />} />
