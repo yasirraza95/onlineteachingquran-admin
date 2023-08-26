@@ -1,27 +1,13 @@
 import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import useTable from "../../../hooks/useTable";
-import useSortableData from "../../../hooks/useSortableData";
-import { useSelector } from "react-redux";
-import UserService from "../../../services/user.service";
-import { useFormik } from "formik";
 import { toast, ToastContainer } from "react-toastify";
-import Swal from "sweetalert2";
-import Pagination from "react-js-pagination";
-import useWindowDimensions from "../../../hooks/useWindowDimensions";
-import $ from "jquery";
-import moment from "moment";
-import secureLocalStorage from "react-secure-storage";
-import axios from "axios";
 import HeaderSidebar from "../../Admin/includes/HeaderSidebar";
 import ToTop from "../../User/Include/ToTop";
-import { quizSearch } from "../../schema";
 import MoveTable from "../../Admin/includes/MoveTable";
 import AdminFooter from "../../Admin/includes/AdminFooter";
 import useLibrary from "../../../hooks/useLibrary";
 import AdminListService from "../../../services/admin-list.service";
 import { Link } from "react-router-dom";
-import { Login } from "@mui/icons-material";
 
 export default function SiteInfo() {
   const [loading, setLoading] = useState(false);
@@ -37,7 +23,6 @@ export default function SiteInfo() {
       let resultData;
       const response = await AdminListService.getSiteInfo();
       resultData = response.data.response;
-      console.log(resultData.length);
       setResultData(resultData);
       setLoading(false);
     } catch (err) {

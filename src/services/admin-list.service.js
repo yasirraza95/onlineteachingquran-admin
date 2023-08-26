@@ -100,6 +100,33 @@ const getSiteInfo = () => {
   });
 };
 
+const getServices = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "services", {
+    headers: headers,
+  });
+};
+
+const totalSlider = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "slider-counter", {
+    headers: headers,
+  });
+};
+
+const totalService = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "service-counter", {
+    headers: headers,
+  });
+};
+
 const getSearchBloodRequestList = (col, val, limit, pageNo, id) => {
   if (col === "1") {
     col = "phone";
@@ -244,6 +271,9 @@ const AdminListService = {
   getSliderList,
   getNamazList,
   getSiteInfo,
+  getServices,
+  totalSlider,
+  totalService,
   getSearchBloodDonorList,
   getSearchBloodRequestList,
   getNewLimitBloodDonorList,

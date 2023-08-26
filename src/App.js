@@ -111,14 +111,9 @@ function App() {
       <Route path="/site-info" element={<SiteInfo />} />
       <Route path="/services" element={<Services />} />
       <Route path="/add-service" element={<AddService />} />
-      {/* <Route path="/contant-us" element={<ContactUs />} /> */}
-      {/* <Route path="/blood-request" element={<BloodRequest />} /> */}
-      {/* <Route path="/blood-donor" element={<BloodDonor />} /> */}
       <Route path="/forgot_pass" element={<AdminForgotPass />} />
       <Route path="/admin/forgot_token" element={<CheckAdminForgetToken />} />
       <Route path="/admin/change_pass" element={<AdminChangePass />} />
-
-      {/* admin routing here  */}
     </Routes>
   );
 }

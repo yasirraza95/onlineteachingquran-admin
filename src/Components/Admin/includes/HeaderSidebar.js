@@ -9,6 +9,7 @@ import secureLocalStorage from "react-secure-storage";
 import { clear } from "@testing-library/user-event/dist/clear";
 
 export default function HeaderSidebar() {
+  const Image_Link = process.env.REACT_APP_Image_Link;
   const [loading, setLoading] = useState(false);
   const [allYears, setAllYears] = useState([]);
   const navigate = useNavigate();
@@ -20,9 +21,6 @@ export default function HeaderSidebar() {
   const { name, uType, image } = state;
 
   var welcomeFname;
-
-
-
 
   const getAllYears = async () => {
     try {
@@ -79,11 +77,11 @@ export default function HeaderSidebar() {
 
             <div class="dropdown"> 
             <div class="profile"> 
-            <img class="dropbtn" src={`https://api.sehatbooking.com/public/upload/${image}`}/> 
+            <img class="dropbtn" src={`${Image_Link}/user.png`}/> 
             <div class="dropdown-content"> 
             <ul> 
-                <li><i class='bx bx-user'></i>
-                <Link to="/profile">Profile</Link></li>
+                {/* <li><i class='bx bx-user'></i>
+                <Link to="/profile">Profile</Link></li> */}
                 <li><i class='bx bx-user'></i>
                 <Link to="/password">Password</Link></li>
                 <li><i class='bx bx-log-in-circle'></i>
