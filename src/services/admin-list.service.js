@@ -8,11 +8,11 @@ const login = (values) => {
   };
   return axios.post(
     API_URL + "user/admin-login", {
-      username: values.name,
-      password: values.password,
-    }, {
-      headers: headers,
-    }
+    username: values.name,
+    password: values.password,
+  }, {
+    headers: headers,
+  }
   );
 };
 
@@ -22,10 +22,10 @@ const forgotPass = (values) => {
   };
   return axios.post(
     API_URL + "user/forgot-admin", {
-      email: values.email,
-    }, {
-      headers: headers,
-    }
+    email: values.email,
+  }, {
+    headers: headers,
+  }
   );
 };
 
@@ -60,8 +60,8 @@ const getSearchBloodDonorList = (col, val, limit, pageNo, id) => {
     limit +
     "&page=" +
     pageNo, {
-      headers: headers,
-    }
+    headers: headers,
+  }
   );
 };
 const getNewLimitBloodDonorList = (limit, id) => {
@@ -72,6 +72,34 @@ const getNewLimitBloodDonorList = (limit, id) => {
     headers: headers,
   });
 };
+
+const getSliderList = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "sliders", {
+    headers: headers,
+  });
+};
+
+const getNamazList = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "namaz-timings", {
+    headers: headers,
+  });
+};
+
+const getSiteInfo = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "site-info", {
+    headers: headers,
+  });
+};
+
 const getSearchBloodRequestList = (col, val, limit, pageNo, id) => {
   if (col === "1") {
     col = "phone";
@@ -99,8 +127,8 @@ const getSearchBloodRequestList = (col, val, limit, pageNo, id) => {
     limit +
     "&page=" +
     pageNo, {
-      headers: headers,
-    }
+    headers: headers,
+  }
   );
 };
 const getNewLimitBloodRequestList = (limit) => {
@@ -117,8 +145,8 @@ const getPaginationBloodDonorList = (pageNo, limit) => {
   };
   return axios.get(
     API_URL + "list-all-donor?page=" + pageNo + "&limit=" + limit, {
-      headers: headers,
-    }
+    headers: headers,
+  }
   );
 };
 const getPaginationBloodRequestList = (pageNo, limit) => {
@@ -127,8 +155,8 @@ const getPaginationBloodRequestList = (pageNo, limit) => {
   };
   return axios.get(
     API_URL + "admin-requests?page=" + pageNo + "&limit=" + limit, {
-      headers: headers,
-    }
+    headers: headers,
+  }
   );
 };
 const UpdateAdminInfo = (id, values) => {
@@ -138,17 +166,17 @@ const UpdateAdminInfo = (id, values) => {
   console.log(values);
   let object = {};
 
-    object = {
-      updated_by: id,
-      new_password: values.new_password,
-      current_password: values.current_password,
-    }
+  object = {
+    updated_by: id,
+    new_password: values.new_password,
+    current_password: values.current_password,
+  }
 
   return axios.post(`${API_URL}update-admin-password/${id}`,
     object
-  , {
-    headers: headers,
-  });
+    , {
+      headers: headers,
+    });
 };
 
 const UpdateAdminProfile = (id, data) => {
@@ -159,9 +187,9 @@ const UpdateAdminProfile = (id, data) => {
 
   return axios.post(`${API_URL}update-admin-image/${id}`,
     data
-  , {
-    headers: headers,
-  });
+    , {
+      headers: headers,
+    });
 };
 
 const uploadVolunteer = (data) => {
@@ -172,9 +200,9 @@ const uploadVolunteer = (data) => {
 
   return axios.post(`${API_URL}volunteer`,
     data
-  , {
-    headers: headers,
-  });
+    , {
+      headers: headers,
+    });
 };
 
 const deleteVolunteer = (id) => {
@@ -213,6 +241,9 @@ const deleteRequest = (donorId, adminId) => {
 const AdminListService = {
   login,
   forgotPass,
+  getSliderList,
+  getNamazList,
+  getSiteInfo,
   getSearchBloodDonorList,
   getSearchBloodRequestList,
   getNewLimitBloodDonorList,

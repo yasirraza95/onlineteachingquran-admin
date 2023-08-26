@@ -31,10 +31,11 @@ export default function AdminLogin() {
       console.log(response);
       const { data } = response;
       const { access_token, user } = data;
-      const { id, first_name, last_name, image } = user;
+      const { id, name, image } = user;
+      let splitName = name.split(" ");
       // console.log(data);
-      let fname = first_name.substring(0, 1).toUpperCase();
-      let lname = last_name.substring(0, 1).toUpperCase();
+      let fname = splitName[0].substring(0, 1).toUpperCase();
+      let lname = splitName[1].substring(0, 1).toUpperCase();
 
       userActions.logIn({
         accessToken: access_token,
