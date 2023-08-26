@@ -92,7 +92,7 @@ export default function Namaz() {
                               : (currentPage - 1) * limit + index + 1}
                           </td>
                           <td>{convertObject(el.name)}</td>
-                          <td>{convertObject(el.time)}</td>
+                          <td>{moment(el.time).format("hh:mm")}</td>
                           <td>
                             <Link
                               className="btn btn-primary px-4 back-blue"
