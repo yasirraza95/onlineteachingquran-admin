@@ -24,6 +24,8 @@ import NamazId from "./Components/Dashboard/UserImgUpload/NamazId";
 import Services from "./Components/Dashboard/UserImgUpload/Services";
 import SiteInfo from "./Components/Dashboard/UserImgUpload/SiteInfo";
 import Sliders from "./Components/Dashboard/UserImgUpload/Sliders";
+import EditTime from "./Components/Dashboard/UserImgUpload/EditTime";
+import EditInfo from "./Components/Dashboard/UserImgUpload/EditInfo";
 
 function App() {
   const dispatch = useDispatch();
@@ -106,8 +108,10 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/sliders" element={<Sliders />} />
       <Route path="/add-slider" element={<AddSlider />} />
+      <Route path="/edit-time/:id" element={<EditTime />} />
       <Route path="/namaz-time" element={<Namaz />} />
       <Route path="/namaz-time/:id" element={<NamazId />} />
+      <Route path="/edit-info/:id" element={<EditInfo />} />
       <Route path="/site-info" element={<SiteInfo />} />
       <Route path="/services" element={<Services />} />
       <Route path="/add-service" element={<AddService />} />

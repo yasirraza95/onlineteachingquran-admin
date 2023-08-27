@@ -33,7 +33,7 @@ export default function Sliders() {
         setLoading(true);
 
         try {
-          const response = await AdminListService.deleteVolunteer(delId);
+          const response = await AdminListService.deleteSlider(delId);
           if (response.status === 200) {
             setLoading(false);
             toast.success("Deleted Successfully!", {

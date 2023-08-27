@@ -81,7 +81,7 @@ export default function SiteInfo() {
                           <td>
                             <Link
                               className="btn btn-primary px-4 back-blue"
-                              to=""
+                              to={`/edit-info/${el.id}`}
                             >
                               Edit <i className="bi bi-pencil"></i>
                             </Link>

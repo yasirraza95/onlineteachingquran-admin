@@ -66,7 +66,7 @@ export default function Namaz() {
         <main className="page-content">
           <div className="manage-heading-2">
             <h2>
-              Namaz Times <span>[{totalResults-1}]</span>
+              Namaz Times <span>[5]</span>
             </h2>
           </div>
           <div className="slides-here">
@@ -92,11 +92,11 @@ export default function Namaz() {
                               : (currentPage - 1) * limit + index + 1}
                           </td>
                           <td>{convertObject(el.name)}</td>
-                          <td>{moment(el.time).format("hh:mm")}</td>
+                          <td>{el.time}</td>
                           <td>
                             <Link
                               className="btn btn-primary px-4 back-blue"
-                              to="/edit"
+                              to={`/edit-time/${el.id}`}
                             >
                               Edit <i className="bi bi-pencil"></i>
                             </Link>

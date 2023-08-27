@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreaters } from "../../../Redux";
+import { useNavigate } from "react-router-dom";
 
 export default function AddSlider() {
   const state = useSelector((state) => state.stateVals);
@@ -16,16 +17,22 @@ export default function AddSlider() {
   const [loading, setLoading] = useState(false);
 
   const [file, setFile] = useState("");
-  const [name, setName] = useState("");
-  const [nameError, setNameError] = useState(false);
+  const [line1, setLine1] = useState("");
+  const [line2, setLine2] = useState("");
+  const [line1Error, setLine1Error] = useState(false);
+  const [line2Error, setLine2Error] = useState(false);
   const [fileError, setFileError] = useState(false);
 
   const dispatch = useDispatch();
   const userActions = bindActionCreators(actionCreaters, dispatch);
+  const navigate = useNavigate();
 
-  const handleText = async (event) => {
-    // console.log(event.target.files[0]);
-    setName(event.target.value);
+  const handleText1 = async (event) => {
+    setLine1(event.target.value);
+  };
+
+  const handleText2 = async (event) => {
+    setLine2(event.target.value);
   };
 
   const handleUpload = async (event) => {
@@ -34,27 +41,36 @@ export default function AddSlider() {
   };
 
   const uploadImage = async () => {
-    if (name === "" && file === "") {
-      setNameError(true);
+    if (line1 === "" && line2 === "" && file === "") {
+      setLine1Error(true);
+      setLine2Error(true);
       setFileError(true);
-    } else if (name === "" && file !== "") {
-      setNameError(true);
+    } else if (line1 === "" && line2 !== "" && file !== "") {
+      setLine1Error(true);
+      setLine2Error(false);
       setFileError(false);
-    } else if (file === "" && name !== "") {
-      setNameError(false);
+    } else if (line1 !== "" && line2 === "" && file !== "") {
+      setLine1Error(false);
+      setLine2Error(true);
+      setFileError(false);
+    } else if (line1 !== "" && line2 !== "" && file === "") {
+      setLine1Error(false);
+      setLine2Error(false);
       setFileError(true);
     } else {
-      setNameError(false);
+      setLine1Error(false);
+      setLine2Error(false);
       setFileError(false);
 
       var formData = new FormData();
-      formData.append("name", name);
+      formData.append("line1", line1);
+      formData.append("line2", line2);
       formData.append("image", file);
 
       try {
         setLoading(true);
 
-        const response = await AdminListService.uploadVolunteer(formData);
+        const response = await AdminListService.uploadSlider(formData);
 
         setLoading(false);
 
@@ -68,6 +84,7 @@ export default function AddSlider() {
           progress: undefined,
           theme: "colored",
         });
+        navigate("/sliders");
       } catch (err) {
         console.log(err);
         setLoading(false);
@@ -84,7 +101,7 @@ export default function AddSlider() {
 
         <main className="page-content">
           <div className="manage-heading-2">
-            <h2>Upload Volunteer</h2>
+            <h2>Add Slider</h2>
           </div>
           <div className="main-content-box">
             {/* <form className="profile-form" method='post'> */}
@@ -92,15 +109,30 @@ export default function AddSlider() {
               <div className="col-lg-6">
                 <input
                   type="text"
-                  name="name"
-                  placeholder="Enter Name"
+                  name="line1"
+                  placeholder="Enter 1st Line"
                   className="form-control"
-                  onChange={handleText}
+                  onChange={handleText1}
                 />
-                {nameError ? (
-                  <p className="help is-danger">Please enter name</p>
+                {line1Error ? (
+                  <p className="help is-danger">Please enter 1st line</p>
                 ) : null}
               </div>
+              <div className="col-lg-6">
+                <input
+                  type="text"
+                  name="line2"
+                  placeholder="Enter 2nd Line"
+                  className="form-control"
+                  onChange={handleText2}
+                />
+                {line2Error ? (
+                  <p className="help is-danger">Please enter 2nd line</p>
+                ) : null}
+              </div>
+              </div>
+              <br/>
+              <div className="row">
               <div className="col-lg-6">
                 <input
                   type="file"

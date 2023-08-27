@@ -91,11 +91,38 @@ const getNamazList = () => {
   });
 };
 
+const getTimeById = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "namaz-timings/" + id, {
+    headers: headers,
+  });
+};
+
+const updateTimeById = (time, id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.put(API_URL + "namaz-timings/" + id, { "time": time }, {
+    headers: headers,
+  });
+};
+
 const getSiteInfo = () => {
   const headers = {
     "Content-Type": "application/json",
   };
   return axios.get(API_URL + "site-info", {
+    headers: headers,
+  });
+};
+
+const updateSiteInfo = (email, phone) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.put(API_URL + "site-info", { "email": email, "phone": phone }, {
     headers: headers,
   });
 };
@@ -232,11 +259,33 @@ const uploadVolunteer = (data) => {
     });
 };
 
+const uploadSlider = (data) => {
+  console.log(data);
+  const headers = {
+    "Content-Type": "multipart/form-data",
+  };
+
+  return axios.post(`${API_URL}slider`,
+    data
+    , {
+      headers: headers,
+    });
+};
+
 const deleteVolunteer = (id) => {
   const headers = {
     "Content-Type": "application/json",
   };
   return axios.delete(API_URL + "volunteer/" + id, {
+    headers: headers,
+  });
+};
+
+const deleteSlider = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.delete(API_URL + "slider/" + id, {
     headers: headers,
   });
 };
@@ -269,8 +318,8 @@ const AdminListService = {
   login,
   forgotPass,
   getSliderList,
-  getNamazList,
-  getSiteInfo,
+  getNamazList, getTimeById, updateTimeById,
+  getSiteInfo, updateSiteInfo,
   getServices,
   totalSlider,
   totalService,
@@ -282,8 +331,9 @@ const AdminListService = {
   getPaginationBloodRequestList,
   UpdateAdminInfo,
   UpdateAdminProfile,
-  uploadVolunteer,
+  uploadVolunteer, uploadSlider,
   deleteVolunteer,
+  deleteSlider,
   deleteData,
   deleteRequest,
 };
