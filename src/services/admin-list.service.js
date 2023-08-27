@@ -127,11 +127,38 @@ const updateSiteInfo = (email, phone) => {
   });
 };
 
+const updateService = (name, description, id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.put(API_URL + "service/" + id, { "name": name, "description": description }, {
+    headers: headers,
+  });
+};
+
 const getServices = () => {
   const headers = {
     "Content-Type": "application/json",
   };
   return axios.get(API_URL + "services", {
+    headers: headers,
+  });
+};
+
+const getServiceById = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "service/" + id, {
+    headers: headers,
+  });
+};
+
+const addService = (name, desc) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.post(API_URL + "service", { "name": name, "description": desc }, {
     headers: headers,
   });
 };
@@ -290,6 +317,15 @@ const deleteSlider = (id) => {
   });
 };
 
+const deleteService = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.delete(API_URL + "service/" + id, {
+    headers: headers,
+  });
+};
+
 const deleteData = (donorId, adminId) => {
   const headers = {
     "Content-Type": "application/json",
@@ -319,8 +355,8 @@ const AdminListService = {
   forgotPass,
   getSliderList,
   getNamazList, getTimeById, updateTimeById,
-  getSiteInfo, updateSiteInfo,
-  getServices,
+  getSiteInfo, updateSiteInfo, updateService,
+  getServices, addService, getServiceById,
   totalSlider,
   totalService,
   getSearchBloodDonorList,
@@ -334,6 +370,7 @@ const AdminListService = {
   uploadVolunteer, uploadSlider,
   deleteVolunteer,
   deleteSlider,
+  deleteService,
   deleteData,
   deleteRequest,
 };

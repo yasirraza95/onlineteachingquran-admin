@@ -9,10 +9,11 @@ import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreaters } from "../../../Redux";
+import { useParams } from "react-router-dom";
 
-export default function AddService() {
+export default function EditService() {
   const state = useSelector((state) => state.stateVals);
-  const { id } = state;
+  const { id } = useParams();
   const [loading, setLoading] = useState(false);
 
   const [name, setName] = useState("");
@@ -22,6 +23,24 @@ export default function AddService() {
 
   const dispatch = useDispatch();
   const userActions = bindActionCreators(actionCreaters, dispatch);
+
+  const getResultData = async () => {
+    setLoading(true);
+
+    try {
+      let resultData;
+      const response = await AdminListService.getServiceById(id);
+      resultData = response.data.response;
+      setName(resultData.name);
+      setDesc(resultData.description);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+    }
+  };
+  useLayoutEffect(() => {
+    getResultData();
+  }, []);
 
   const handleText = async (event) => {
     setName(event.target.value);
@@ -48,7 +67,7 @@ export default function AddService() {
       try {
         setLoading(true);
 
-        const response = await AdminListService.addService(name, desc);
+        const response = await AdminListService.updateService(name, desc, id);
 
         setLoading(false);
 
@@ -73,12 +92,10 @@ export default function AddService() {
     <div className="semi-dark">
       <div className="wrapper">
         <ToastContainer />
-
         <HeaderSidebar />
-
         <main className="page-content">
           <div className="manage-heading-2">
-            <h2>Add Service</h2>
+            <h2>Edit Service</h2>
           </div>
           <div className="main-content-box">
             {/* <form className="profile-form" method='post'> */}
@@ -90,6 +107,7 @@ export default function AddService() {
                   placeholder="Enter Name"
                   className="form-control"
                   onChange={handleText}
+                  value={name || ""}
                 />
                 {nameError ? (
                   <p className="help is-danger">Please enter name</p>
@@ -102,6 +120,7 @@ export default function AddService() {
                   placeholder="Enter Description"
                   className="form-control"
                   onChange={handleText2}
+                  value={desc || ""}
                 />
                 {descError ? (
                   <p className="help is-danger">Please enter description</p>

@@ -26,6 +26,7 @@ import SiteInfo from "./Components/Dashboard/UserImgUpload/SiteInfo";
 import Sliders from "./Components/Dashboard/UserImgUpload/Sliders";
 import EditTime from "./Components/Dashboard/UserImgUpload/EditTime";
 import EditInfo from "./Components/Dashboard/UserImgUpload/EditInfo";
+import EditService from "./Components/Dashboard/UserImgUpload/EditService";
 
 function App() {
   const dispatch = useDispatch();
@@ -115,6 +116,7 @@ function App() {
       <Route path="/site-info" element={<SiteInfo />} />
       <Route path="/services" element={<Services />} />
       <Route path="/add-service" element={<AddService />} />
+      <Route path="/edit-service/:id" element={<EditService />} />
       <Route path="/forgot_pass" element={<AdminForgotPass />} />
       <Route path="/admin/forgot_token" element={<CheckAdminForgetToken />} />
       <Route path="/admin/change_pass" element={<AdminChangePass />} />

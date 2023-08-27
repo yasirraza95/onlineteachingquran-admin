@@ -33,7 +33,7 @@ export default function Services() {
       if (result.isConfirmed) {
         setLoading(true);
         try {
-          const response = await AdminListService.deleteVolunteer(delId);
+          const response = await AdminListService.deleteService(delId);
           if (response.status === 200) {
             setLoading(false);
             toast.success("Deleted Successfully!", {
@@ -123,7 +123,7 @@ export default function Services() {
                           <td>
                             <Link
                               className="btn btn-primary px-4 back-blue"
-                              to="edit"
+                              to={`/edit-service/${el.id}`}
                             >
                               Edit <i className="bi bi-pencil"></i>
                             </Link>
