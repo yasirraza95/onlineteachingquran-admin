@@ -39,67 +39,26 @@ function App() {
 
   let decoded;
 
-  // useEffect(() => {
-  //   if (accessToken) {
-  //     decoded = jwt_decode(accessToken);
-  //     console.log(decoded);
-  //   }
-  //   if (
-  //     accessToken &&
-  //     uType !== "admin"
-  //   ) {
-  //     if (Math.floor(new Date().getTime() / 1000) > decoded.exp) {
-  //       userActions.logOut(null);
-  //       Swal.fire({
-  //         title: "Expired!",
-  //         text: "Your Login Session expired!",
-  //         icon: "error",
-  //         confirmButtonText: "Login Again",
-  //       });
-  //       navigate("/");
-  //     }
-     
-  //   }
-
-  //   const callFun = window["onUrlChange"];
-  //   if (
-  //     accessToken &&
-  //     uType !== "rsa" &&
-  //     uType !== "manager" &&
-  //     uType !== "corporate"
-  //   ) {
-  //     if (Math.floor(new Date().getTime() / 1000) > decoded.exp) {
-  //       userActions.logOut(null);
-  //       Swal.fire({
-  //         title: "Expired!",
-  //         text: "Your Login Session expired!",
-  //         icon: "error",
-  //         confirmButtonText: "Login Again",
-  //       });
-  //       navigate("/");
-  //     }
-  //     if (
-  //       locat.pathname === "/" ||
-  //       locat.pathname === "/" ||
-  //       locat.pathname === "/forgot_pass" ||
-  //       locat.pathname === "/forgot_pass/"
-  //     ) {
-  //       callFun();
-  //       navigate("/dashboard");
-  //     }
-  //   } else {
-  //     if (
-  //       locat.pathname !== "/forgot_pass" &&
-  //       locat.pathname !== "/forgot_token" &&
-  //       locat.pathname !== "/change_pass" &&
-  //       locat.pathname !== "/forgot_pass/" &&
-  //       locat.pathname !== "/change_pass/" &&
-  //       locat.pathname.indexOf("/") > -1
-  //     ) {
-  //       navigate("/");
-  //     }
-  //   }
-  // }, [locat.pathname]);
+  useEffect(() => {
+    
+    if (accessToken) {
+      decoded = jwt_decode(accessToken);
+      if (Math.floor(new Date().getTime() / 1000) > decoded.exp) {
+        userActions.logOut(null);
+        Swal.fire({
+          title: "Expired!",
+          text: "Your Login Session expired!",
+          icon: "error",
+          confirmButtonText: "Login Again",
+        });
+        navigate("/");
+      } else {
+        navigate("/dashboard");
+      }
+    } else {
+      navigate("/");
+    }
+  }, [locat.pathname]);
 
   return (
     <Routes>
