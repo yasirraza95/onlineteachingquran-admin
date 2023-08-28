@@ -39,26 +39,26 @@ function App() {
 
   let decoded;
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    if (accessToken) {
-      decoded = jwt_decode(accessToken);
-      if (Math.floor(new Date().getTime() / 1000) > decoded.exp) {
-        userActions.logOut(null);
-        Swal.fire({
-          title: "Expired!",
-          text: "Your Login Session expired!",
-          icon: "error",
-          confirmButtonText: "Login Again",
-        });
-        navigate("/");
-      } else {
-        navigate("/dashboard");
-      }
-    } else {
-      navigate("/");
-    }
-  }, [locat.pathname]);
+  //   if (accessToken) {
+  //     decoded = jwt_decode(accessToken);
+  //     if (Math.floor(new Date().getTime() / 1000) > decoded.exp) {
+  //       userActions.logOut(null);
+  //       Swal.fire({
+  //         title: "Expired!",
+  //         text: "Your Login Session expired!",
+  //         icon: "error",
+  //         confirmButtonText: "Login Again",
+  //       });
+  //       navigate("/");
+  //     } else {
+  //       navigate("/dashboard");
+  //     }
+  //   } else {
+  //     navigate("/");
+  //   }
+  // }, [locat.pathname]);
 
   return (
     <Routes>
