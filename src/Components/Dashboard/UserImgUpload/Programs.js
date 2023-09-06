@@ -10,7 +10,7 @@ import useLibrary from "../../../hooks/useLibrary";
 import AdminListService from "../../../services/admin-list.service";
 import { Link } from "react-router-dom";
 
-export default function Services() {
+export default function Programs() {
   const API_URL = process.env.REACT_APP_API_Link;
   const [loading, setLoading] = useState(false);
   const { convertObject } = useLibrary();
@@ -33,7 +33,7 @@ export default function Services() {
       if (result.isConfirmed) {
         setLoading(true);
         try {
-          const response = await AdminListService.deleteService(delId);
+          const response = await AdminListService.deleteProgram(delId);
           if (response.status === 200) {
             setLoading(false);
             toast.success("Deleted Successfully!", {
@@ -70,7 +70,7 @@ export default function Services() {
 
     try {
       let resultData;
-      const response = await AdminListService.getServices();
+      const response = await AdminListService.getPrograms();
       resultData = response.data.response;
       console.log(resultData);
       setResultData(resultData);
@@ -92,7 +92,7 @@ export default function Services() {
         <main className="page-content">
           <div className="manage-heading-2">
             <h2>
-              All Teachers <span>[{totalResults}]</span>
+              All Weekly Programs <span>[{totalResults}]</span>
             </h2>
           </div>
           <div className="slides-here">
@@ -123,7 +123,7 @@ export default function Services() {
                           <td>
                             <Link
                               className="btn btn-primary px-4 back-blue"
-                              to={`/edit-service/${el.id}`}
+                              to={`/edit-program/${el.id}`}
                             >
                               Edit <i className="bi bi-pencil"></i>
                             </Link>

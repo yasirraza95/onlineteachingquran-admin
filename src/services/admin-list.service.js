@@ -136,11 +136,38 @@ const updateService = (name, description, id) => {
   });
 };
 
+const updateProgram = (name, description, id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.put(API_URL + "program/" + id, { "name": name, "description": description }, {
+    headers: headers,
+  });
+};
+
 const getServices = () => {
   const headers = {
     "Content-Type": "application/json",
   };
   return axios.get(API_URL + "services", {
+    headers: headers,
+  });
+};
+
+const getPrograms = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "weekly-programs", {
+    headers: headers,
+  });
+};
+
+const getTeachers = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "teachers", {
     headers: headers,
   });
 };
@@ -154,11 +181,47 @@ const getServiceById = (id) => {
   });
 };
 
+const getProgramById = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "weekly-program/" + id, {
+    headers: headers,
+  });
+};
+
+const getTeacherById = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "teacher/" + id, {
+    headers: headers,
+  });
+};
+
 const addService = (name, desc) => {
   const headers = {
     "Content-Type": "application/json",
   };
   return axios.post(API_URL + "service", { "name": name, "description": desc }, {
+    headers: headers,
+  });
+};
+
+const addProgram = (name, desc) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.post(API_URL + "weekly-program", { "name": name, "description": desc }, {
+    headers: headers,
+  });
+};
+
+const addTeacher = (name, desc) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.post(API_URL + "teacher", { "name": name, "description": desc }, {
     headers: headers,
   });
 };
@@ -317,6 +380,24 @@ const deleteSlider = (id) => {
   });
 };
 
+const deleteTeacher = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.delete(API_URL + "teacher/" + id, {
+    headers: headers,
+  });
+};
+
+const deleteProgram = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.delete(API_URL + "weekly-program/" + id, {
+    headers: headers,
+  });
+};
+
 const deleteService = (id) => {
   const headers = {
     "Content-Type": "application/json",
@@ -356,6 +437,8 @@ const AdminListService = {
   getSliderList,
   getNamazList, getTimeById, updateTimeById,
   getSiteInfo, updateSiteInfo, updateService,
+  getPrograms, addProgram, getProgramById,
+  getTeachers, addTeacher, getTeacherById,
   getServices, addService, getServiceById,
   totalSlider,
   totalService,
@@ -370,6 +453,8 @@ const AdminListService = {
   uploadVolunteer, uploadSlider,
   deleteVolunteer,
   deleteSlider,
+  deleteTeacher,
+  deleteProgram,
   deleteService,
   deleteData,
   deleteRequest,

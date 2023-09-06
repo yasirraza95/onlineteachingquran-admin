@@ -184,6 +184,38 @@ export default function HeaderSidebar() {
               <div className="menu-title">Add Service</div>
             </Link>
           </li>
+          <li>
+            <Link to="/teachers">
+              <div className="parent-icon">
+              <i class='fas fa-hand-holding-medical'></i>
+              </div>
+              <div className="menu-title">Teachers</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/add-teacher">
+              <div className="parent-icon">
+              <i class='fas fa-hand-holding-medical'></i>
+              </div>
+              <div className="menu-title">Add Teacher</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/programs">
+              <div className="parent-icon">
+              <i class='fas fa-hand-holding-medical'></i>
+              </div>
+              <div className="menu-title">Weekly Programs</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/add-program">
+              <div className="parent-icon">
+              <i class='fas fa-hand-holding-medical'></i>
+              </div>
+              <div className="menu-title">Add Weekly Program</div>
+            </Link>
+          </li>
         </ul>
       </aside>
       <div className={`loader ${loading ? "in" : ""}`}>

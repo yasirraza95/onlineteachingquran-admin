@@ -10,8 +10,9 @@ import useLibrary from "../../../hooks/useLibrary";
 import AdminListService from "../../../services/admin-list.service";
 import { Link } from "react-router-dom";
 
-export default function Services() {
+export default function Teachers() {
   const API_URL = process.env.REACT_APP_API_Link;
+  const Image_Link = process.env.REACT_APP_Image_Link;
   const [loading, setLoading] = useState(false);
   const { convertObject } = useLibrary();
   const [limit, setLimit] = useState("10");
@@ -33,7 +34,7 @@ export default function Services() {
       if (result.isConfirmed) {
         setLoading(true);
         try {
-          const response = await AdminListService.deleteService(delId);
+          const response = await AdminListService.deleteTeacher(delId);
           if (response.status === 200) {
             setLoading(false);
             toast.success("Deleted Successfully!", {
@@ -70,7 +71,7 @@ export default function Services() {
 
     try {
       let resultData;
-      const response = await AdminListService.getServices();
+      const response = await AdminListService.getTeachers();
       resultData = response.data.response;
       console.log(resultData);
       setResultData(resultData);
@@ -103,8 +104,9 @@ export default function Services() {
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th>Image</th>
                       <th>Name</th>
-                      <th>Description</th>
+                      <th>Designation</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -118,12 +120,13 @@ export default function Services() {
                               ? index + 1
                               : (currentPage - 1) * limit + index + 1}
                           </td>
-                          <td>{convertObject(el.name)}</td>
-                          <td>{convertObject(el.description)}</td>
+                          <td><img src={`${Image_Link}/${el.image}`} style={{width: 50}} /></td>
+                          <td>{el.name}</td>
+                          <td>{el.designation}</td>
                           <td>
                             <Link
                               className="btn btn-primary px-4 back-blue"
-                              to={`/edit-service/${el.id}`}
+                              to={`/edit-teacher/${el.id}`}
                             >
                               Edit <i className="bi bi-pencil"></i>
                             </Link>

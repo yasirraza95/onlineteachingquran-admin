@@ -27,6 +27,12 @@ import Sliders from "./Components/Dashboard/UserImgUpload/Sliders";
 import EditTime from "./Components/Dashboard/UserImgUpload/EditTime";
 import EditInfo from "./Components/Dashboard/UserImgUpload/EditInfo";
 import EditService from "./Components/Dashboard/UserImgUpload/EditService";
+import Teachers from "./Components/Dashboard/UserImgUpload/Teachers";
+import AddTeacher from "./Components/Dashboard/UserImgUpload/AddTeacher";
+import Programs from "./Components/Dashboard/UserImgUpload/Programs";
+import AddProgram from "./Components/Dashboard/UserImgUpload/AddProgram.";
+import EditTeacher from "./Components/Dashboard/UserImgUpload/EditTeacher";
+import EditProgram from "./Components/Dashboard/UserImgUpload/EditProgram";
 
 function App() {
   const dispatch = useDispatch();
@@ -74,8 +80,14 @@ function App() {
       <Route path="/edit-info/:id" element={<EditInfo />} />
       <Route path="/site-info" element={<SiteInfo />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/teachers" element={<Teachers />} />
+      <Route path="/programs" element={<Programs />} />
       <Route path="/add-service" element={<AddService />} />
+      <Route path="/add-program" element={<AddProgram />} />
+      <Route path="/add-teacher" element={<AddTeacher />} /> {/**/}
       <Route path="/edit-service/:id" element={<EditService />} />
+      <Route path="/edit-teacher/:id" element={<EditTeacher />} /> {/**/}
+      <Route path="/edit-program/:id" element={<EditProgram />} /> {/**/}
       <Route path="/forgot_pass" element={<AdminForgotPass />} />
       <Route path="/admin/forgot_token" element={<CheckAdminForgetToken />} />
       <Route path="/admin/change_pass" element={<AdminChangePass />} />
