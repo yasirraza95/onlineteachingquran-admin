@@ -37,6 +37,10 @@ export default function EditTeacher() {
       resultData = response.data.response;
       setName(resultData.name);
       setDesg(resultData.designation);
+      setFb(resultData.fb);
+      setX(resultData.x);
+      setYt(resultData.youtube);
+      console.log(resultData);
       setLoading(false);
     } catch (err) {
       setLoading(false);
@@ -67,7 +71,7 @@ export default function EditTeacher() {
   };
 
   const handleText6 = async (event) => {
-    setImage(event.target.value);
+    setImage(event.target.files[0])
   };
 
   const uploadData = async () => {
@@ -87,11 +91,21 @@ export default function EditTeacher() {
       try {
         setLoading(true);
 
-        const response = await AdminListService.updateTeacher(name, desg, id);
+        var formData = new FormData();
+        formData.append("name", name);
+        formData.append("designation", desg);
+        formData.append("fb", fb);
+        formData.append("x", x);
+        formData.append("youtube", yt);
+        if(image) {
+          formData.append("image", image);
+        }
+
+        const response = await AdminListService.updateTeacher(formData, id);
 
         setLoading(false);
 
-        toast.success(response.data.response, {
+        toast.success("Teacher Updated", {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: true,
@@ -102,8 +116,18 @@ export default function EditTeacher() {
           theme: "colored",
         });
       } catch (err) {
-        console.log(err);
+        
         setLoading(false);
+        toast.error("Something went wrong", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     }
   };
@@ -189,7 +213,10 @@ export default function EditTeacher() {
                   placeholder="Choose Image"
                   className="form-control"
                   onChange={handleText6}
-                  value={image || ""}
+                  onClick={(e) => {
+                    e.target.value = null;
+                    setImage("");
+                  }}
                 />
               </div>
             </div>

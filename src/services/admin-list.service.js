@@ -136,6 +136,15 @@ const updateService = (name, description, id) => {
   });
 };
 
+const updateTeacher = (data, id) => {
+  const headers = {
+    "Content-Type": "multipart/form-data",
+  };
+  return axios.post(API_URL + "teacher/" + id, data, {
+    headers: headers,
+  });
+};
+
 const updateProgram = (name, description, id) => {
   const headers = {
     "Content-Type": "application/json",
@@ -217,11 +226,12 @@ const addProgram = (name, desc) => {
   });
 };
 
-const addTeacher = (name, desc) => {
+const addTeacher = (data) => {
+  console.log(data);
   const headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
   };
-  return axios.post(API_URL + "teacher", { "name": name, "description": desc }, {
+  return axios.post(API_URL + "teacher", data, {
     headers: headers,
   });
 };
@@ -436,7 +446,7 @@ const AdminListService = {
   forgotPass,
   getSliderList,
   getNamazList, getTimeById, updateTimeById,
-  getSiteInfo, updateSiteInfo, updateService,
+  getSiteInfo, updateSiteInfo, updateService,updateTeacher, updateProgram,
   getPrograms, addProgram, getProgramById,
   getTeachers, addTeacher, getTeacherById,
   getServices, addService, getServiceById,
