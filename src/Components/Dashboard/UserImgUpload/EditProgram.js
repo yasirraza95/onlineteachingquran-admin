@@ -18,10 +18,6 @@ export default function EditProgram() {
 
   const [name, setName] = useState("");
   const [desg, setDesg] = useState("");
-  const [fb, setFb] = useState("");
-  const [x, setX] = useState("");
-  const [yt, setYt] = useState("");
-  const [image, setImage] = useState("");
   const [nameError, setNameError] = useState(false);
   const [desgError, setDesgError] = useState(false);
 
@@ -36,7 +32,7 @@ export default function EditProgram() {
       const response = await AdminListService.getProgramById(id);
       resultData = response.data.response;
       setName(resultData.name);
-      setDesg(resultData.designation);
+      setDesg(resultData.description);
       setLoading(false);
     } catch (err) {
       setLoading(false);
@@ -52,22 +48,6 @@ export default function EditProgram() {
 
   const handleText2 = async (event) => {
     setDesg(event.target.value);
-  };
-
-  const handleText3 = async (event) => {
-    setFb(event.target.value);
-  };
-
-  const handleText4 = async (event) => {
-    setX(event.target.value);
-  };
-
-  const handleText5 = async (event) => {
-    setYt(event.target.value);
-  };
-
-  const handleText6 = async (event) => {
-    setImage(event.target.value);
   };
 
   const uploadData = async () => {
@@ -91,7 +71,7 @@ export default function EditProgram() {
 
         setLoading(false);
 
-        toast.success(response.data.response, {
+        toast.success("Program Updated", {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: true,
@@ -102,8 +82,18 @@ export default function EditProgram() {
           theme: "colored",
         });
       } catch (err) {
-        console.log(err);
+        
         setLoading(false);
+        toast.error("Something went wrong", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     }
   };
@@ -148,52 +138,6 @@ export default function EditProgram() {
               </div>
             </div>
             <br />
-            <div className="row">
-              <div className="col-lg-6">
-                <input
-                  type="text"
-                  name="fb"
-                  placeholder="Enter FB Link"
-                  className="form-control"
-                  onChange={handleText3}
-                  value={fb || ""}
-                />
-              </div>
-              <div className="col-lg-6">
-                <input
-                  type="text"
-                  name="x"
-                  placeholder="Enter X Link"
-                  className="form-control"
-                  onChange={handleText4}
-                  value={x || ""}
-                />
-              </div>
-            </div>
-            <br/>
-            <div className="row">
-              <div className="col-lg-6">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter Youtube Link"
-                  className="form-control"
-                  onChange={handleText5}
-                  value={yt || ""}
-                />
-              </div>
-              <div className="col-lg-6">
-                <input
-                  type="file"
-                  name="image"
-                  placeholder="Choose Image"
-                  className="form-control"
-                  onChange={handleText6}
-                  value={image || ""}
-                />
-              </div>
-            </div>
-            <br/>
             <div className="row">
               <div className="col-lg-6">
                 <button

@@ -63,8 +63,18 @@ export default function AddProgram() {
           theme: "colored",
         });
       } catch (err) {
-        console.log(err);
+        
         setLoading(false);
+        toast.error("Something went wrong", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     }
   };

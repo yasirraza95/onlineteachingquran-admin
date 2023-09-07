@@ -149,7 +149,7 @@ const updateProgram = (name, description, id) => {
   const headers = {
     "Content-Type": "application/json",
   };
-  return axios.put(API_URL + "program/" + id, { "name": name, "description": description }, {
+  return axios.put(API_URL + "weekly-program/" + id, { "name": name, "description": description }, {
     headers: headers,
   });
 };

@@ -84,10 +84,10 @@ function App() {
       <Route path="/programs" element={<Programs />} />
       <Route path="/add-service" element={<AddService />} />
       <Route path="/add-program" element={<AddProgram />} />
-      <Route path="/add-teacher" element={<AddTeacher />} /> {/**/}
+      <Route path="/add-teacher" element={<AddTeacher />} />
       <Route path="/edit-service/:id" element={<EditService />} />
-      <Route path="/edit-teacher/:id" element={<EditTeacher />} /> {/**/}
-      <Route path="/edit-program/:id" element={<EditProgram />} /> {/**/}
+      <Route path="/edit-teacher/:id" element={<EditTeacher />} />
+      <Route path="/edit-program/:id" element={<EditProgram />} />
       <Route path="/forgot_pass" element={<AdminForgotPass />} />
       <Route path="/admin/forgot_token" element={<CheckAdminForgetToken />} />
       <Route path="/admin/change_pass" element={<AdminChangePass />} />
