@@ -97,7 +97,7 @@ export default function AdminLogin() {
             <div className="col-md-6 col-lg-7">
               <div className="text-center">
                 <Link to="/">
-                <img src={logo} className="logo" alt="" />
+                  <img src={logo} className="logo" alt="" />
                 </Link>
                 {/* <h1 style={{color: "#100d11"}}>Dashboard</h1> */}
               </div>
@@ -105,18 +105,17 @@ export default function AdminLogin() {
                 <div className="black-box">
                   <form action="" onSubmit={handleSubmit} noValidate>
                     <div className="row">
-                    <div className="col-lg-12">
-                        <h4 className="prf-hed" style={{color: "#157815"}}>ADMIN LOGIN</h4>
+                      <div className="col-lg-12">
+                        <h4 className="prf-hed" style={{ color: "#157815" }}>ADMIN LOGIN</h4>
                       </div>
                       <hr className="underLine" />
                       <div className="col-12">
                         <div
-                          className={` input-group ${
-                            errors.name && touched.name ? "is-danger" : ""
-                          }`}
+                          className={` input-group ${errors.name && touched.name ? "is-danger" : ""
+                            }`}
                         >
                           <span className="input-group-text" id="basic-addon1">
-                            <i className="bi bi-person-fill" style={{color: "#fff"}}></i>
+                            <i className="bi bi-person-fill" style={{ color: "#fff" }}></i>
                           </span>
                           <input
                             type="text"
@@ -135,14 +134,13 @@ export default function AdminLogin() {
                       </div>
                       <div className="col-12">
                         <div
-                          className={` input-group ${
-                            errors.password && touched.password
+                          className={` input-group ${errors.password && touched.password
                               ? "is-danger"
                               : ""
-                          }`}
+                            }`}
                         >
                           <span className="input-group-text" id="basic-addon1">
-                          <i className="bi bi-lock-fill" style={{color: "#fff"}}></i>
+                            <i className="bi bi-lock-fill" style={{ color: "#fff" }}></i>
                           </span>
                           <input
                             type="password"
@@ -165,11 +163,11 @@ export default function AdminLogin() {
                     </div>
                   </form>
                 </div>
-                <br/>
+                <br />
               </div>
             </div>
 
-            
+
             {/* <div className="col-12">
               <p className="copyright">
                 © Copyrights {new Date().getFullYear()} all rights reserved.
