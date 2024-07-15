@@ -92,7 +92,7 @@ export default function Services() {
         <main className="page-content">
           <div className="manage-heading-2">
             <h2>
-              All Teachers <span>[{totalResults}]</span>
+              All Services <span>[{totalResults}]</span>
             </h2>
           </div>
           <div className="slides-here">
