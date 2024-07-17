@@ -137,6 +137,14 @@ export default function HeaderSidebar() {
             </Link>
           </li>
           <li>
+            <Link to="/enrollments">
+              <div className="parent-icon">
+              <i class="bi bi-people-fill"></i>
+              </div>
+              <div className="menu-title">Enrollments</div>
+            </Link>
+          </li>
+          <li>
             <Link to="/sliders">
               <div className="parent-icon">
               <i class="bi bi-people-fill"></i>

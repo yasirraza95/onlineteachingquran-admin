@@ -163,6 +163,15 @@ const getServices = () => {
   });
 };
 
+const getEnrollments = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "enrollments", {
+    headers: headers,
+  });
+};
+
 const getPrograms = () => {
   const headers = {
     "Content-Type": "application/json",
@@ -186,6 +195,24 @@ const getServiceById = (id) => {
     "Content-Type": "application/json",
   };
   return axios.get(API_URL + "service/" + id, {
+    headers: headers,
+  });
+};
+
+const getEnrollmentById = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(API_URL + "enrollment/" + id, {
+    headers: headers,
+  });
+};
+
+const updateEnrollmentById = (starter, price, duration, id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.put(API_URL + "enrollment/" + id, { "price": price, "starter": starter, "duration": duration }, {
     headers: headers,
   });
 };
@@ -446,10 +473,11 @@ const AdminListService = {
   forgotPass,
   getSliderList,
   getNamazList, getTimeById, updateTimeById,
-  getSiteInfo, updateSiteInfo, updateService,updateTeacher, updateProgram,
+  getSiteInfo, updateSiteInfo, updateService, updateTeacher, updateProgram,
   getPrograms, addProgram, getProgramById,
   getTeachers, addTeacher, getTeacherById,
   getServices, addService, getServiceById,
+  getEnrollments, updateEnrollmentById, getEnrollmentById,
   totalSlider,
   totalService,
   getSearchBloodDonorList,

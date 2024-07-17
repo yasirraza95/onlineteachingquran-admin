@@ -33,6 +33,8 @@ import Programs from "./Components/Dashboard/UserImgUpload/Programs";
 import AddProgram from "./Components/Dashboard/UserImgUpload/AddProgram.";
 import EditTeacher from "./Components/Dashboard/UserImgUpload/EditTeacher";
 import EditProgram from "./Components/Dashboard/UserImgUpload/EditProgram";
+import Enrollment from "./Components/Dashboard/UserImgUpload/Enrollment";
+import EditEnrollment from "./Components/Dashboard/UserImgUpload/EditEnrollment";
 
 function App() {
   const dispatch = useDispatch();
@@ -80,12 +82,14 @@ function App() {
       <Route path="/edit-info/:id" element={<EditInfo />} />
       <Route path="/site-info" element={<SiteInfo />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/enrollments" element={<Enrollment />} />
       <Route path="/teachers" element={<Teachers />} />
       <Route path="/programs" element={<Programs />} />
       <Route path="/add-service" element={<AddService />} />
       <Route path="/add-program" element={<AddProgram />} />
       <Route path="/add-teacher" element={<AddTeacher />} />
       <Route path="/edit-service/:id" element={<EditService />} />
+      <Route path="/edit-enrollment/:id" element={<EditEnrollment />} />
       <Route path="/edit-teacher/:id" element={<EditTeacher />} />
       <Route path="/edit-program/:id" element={<EditProgram />} />
       <Route path="/forgot_pass" element={<AdminForgotPass />} />
